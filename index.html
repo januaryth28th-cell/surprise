@@ -83,6 +83,11 @@ color:#00b4d8;
 opacity:0;
 animation: fadeInOut 4s forwards;
 }
+.fadeinout {
+color:#000000;
+opacity:0;
+animation: fadeInOut 4s forwards;
+}
 @keyframes fadeInOut {
 0% {opacity:0;}
 20%{opacity:1;}
@@ -775,7 +780,6 @@ const h1=document.createElement('h1');
   h1.style.position = "absolute";
   h1.style.transform = "translate(-50%, -50%)";
   h1.style.textAlign = "center";
-  h1.style.color='#000000';
   document.body.appendChild(h1);
 
   const today = new Date();
@@ -784,9 +788,9 @@ const h1=document.createElement('h1');
   function showMessage(text, delay) {
    let timeout= setTimeout(() => {
       h1.innerHTML = text;
-      h1.classList.remove('fadeInOut');
+      h1.classList.remove('fadeinout');
       void h1.offsetWidth; // Force reflow
-      h1.classList.add('fadeInOut');
+      h1.classList.add('fadeinout');
       console.log(text);
     }, delay);
   }
@@ -806,7 +810,4 @@ createCloud()
 </script>
 </body>
 </html>
-
-
-
 
